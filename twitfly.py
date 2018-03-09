@@ -3,7 +3,6 @@ import json
 from twitter import Twitter
 from twitter.oauth import OAuth
 from twitter.stream import TwitterStream, Timeout, HeartbeatTimeout, Hangup
-import pdb
 
 def loadKeys():
 	with open("keys.json","r") as f:
@@ -30,7 +29,6 @@ def searchAndRetweet(screenname,last_id):
 
     return last_id
 
-#pdb.set_trace()
 accounts = getAccounts()
 	
 keys = loadKeys()
