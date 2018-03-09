@@ -34,17 +34,14 @@ accounts = getAccounts()
 keys = loadKeys()
 auth = OAuth(keys['token'],keys['tokensecret'],keys['key'],keys['apisecret'])
 
-#stream = TwitterStream(auth=auth,domain='userstream.twitter.com')
 t = Twitter(auth=auth)
 
-#samp = {'accounts': [{'sn':'secretflying','id':971910235379195904},{'sn':'theflightdeal','id':971910235379195904}]}
 
 while True:
     for ac in accounts:
         lid = searchAndRetweet(ac['sn'],ac['id'])
         ac['id'] = lid
 
-    #print("==================")
 
     saveAccounts(accounts)
     time.sleep(60*10)
