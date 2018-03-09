@@ -11,7 +11,7 @@ def loadKeys():
 
 def getAccounts():
 	with open("accounts.json","r") as f:
-		return json.load(f)['accounts']
+		return json.load(f)
 
 def saveAccounts(accounts):
 	with open("accounts.json","w") as f:
